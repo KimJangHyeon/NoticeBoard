@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <typeAliases>
+        <typeAlias alias="board" type="com.wisefashion.noticeboard.Entity.BoardEntity" />
+        <typeAlias alias="user" type="com.wisefashion.noticeboard.Entity.UserEntity" />
+        <typeAlias alias="writeVO" type="com.wisefashion.noticeboard.VO.WriteVO" />
+        <typeAlias alias="filterVO" type="com.wisefashion.noticeboard.VO.FilterVO" />
+    </typeAliases>
+
+</configuration>
