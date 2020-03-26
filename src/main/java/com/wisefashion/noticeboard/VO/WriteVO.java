@@ -1,9 +1,18 @@
 package com.wisefashion.noticeboard.VO;
 
 public class WriteVO {
+    int id;
     String name;
     String title;
     String text;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

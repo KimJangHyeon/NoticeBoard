@@ -12,6 +12,9 @@
         <typeAlias alias="user" type="com.wisefashion.noticeboard.Entity.UserEntity" />
         <typeAlias alias="writeVO" type="com.wisefashion.noticeboard.VO.WriteVO" />
         <typeAlias alias="filterVO" type="com.wisefashion.noticeboard.VO.FilterVO" />
+        <typeAlias alias="signInVO" type="com.wisefashion.noticeboard.VO.SignInVO" />
+        <typeAlias alias="matchVO" type="com.wisefashion.noticeboard.VO.MatchVO" />
+
     </typeAliases>
 
 </configuration>

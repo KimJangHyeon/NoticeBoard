@@ -43,4 +43,8 @@ public class BoardDAO {
     public List<BoardEntity> getFilterList(FilterVO filterVO) {
         return sqlSession.selectList("getFilteredList", filterVO);
     }
+    public int delMyBoard(int id) {
+        sqlSession.delete("delMyBoard", id);
+        return 1;
+    }
 }

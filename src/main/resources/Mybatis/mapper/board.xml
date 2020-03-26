@@ -16,7 +16,7 @@
 
 
 
-    <insert id="postUserText" parameterType="WriteVO">
+    <insert id="postUserText" parameterType="writeVO">
         INSERT INTO test_board(name, title, text) VALUES (#{name}, #{title}, #{text})
     </insert>
 
@@ -31,4 +31,10 @@
     <select id="getFilteredList" parameterType="filterVO" resultType="board">
        SELECT id, name, title FROM test_board WHERE title LIKE  CONCAT('%',#{filter},'%') OR text LIKE  CONCAT('%',#{filter},'%') LIMIT #{page}, 10
     </select>
+    <update id="postBoardUpdate" parameterType="writeVO">
+        UPDATE test_board SET title=#{title}, text=#{text} WHERE id=#{id}
+    </update>
+    <delete id="delMyBoard" parameterType="int">
+        DELETE FROM test_board WHERE id=#{id}
+    </delete>
 </mapper>

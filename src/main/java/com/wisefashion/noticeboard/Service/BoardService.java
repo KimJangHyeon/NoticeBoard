@@ -4,11 +4,14 @@ import com.wisefashion.noticeboard.DAO.UserDAO;
 import com.wisefashion.noticeboard.DAO.BoardDAO;
 import com.wisefashion.noticeboard.Entity.BoardEntity;
 import com.wisefashion.noticeboard.VO.FilterVO;
+import com.wisefashion.noticeboard.VO.MatchVO;
+import com.wisefashion.noticeboard.VO.SignInVO;
 import com.wisefashion.noticeboard.VO.WriteVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import sun.rmi.runtime.Log;
 
 import java.util.List;
@@ -16,10 +19,10 @@ import java.util.List;
 @Service
 public class BoardService implements InferBoardService {
     @Autowired
-    BoardDAO boardDAO;
+    private BoardDAO boardDAO;
 
     @Autowired
-    UserDAO userDAO;
+    private UserDAO userDAO;
 
     @Override
     public String getBoardRead(int id) {
@@ -43,7 +46,21 @@ public class BoardService implements InferBoardService {
     }
 
     @Override
-    public int signIn() {
-        return 0;
+    public boolean postLogIn(SignInVO signInVO) {
+        return userDAO.postLogIn(signInVO);
+    }
+
+    @Override
+    public boolean postUserMatch(MatchVO matchVO) {
+        return userDAO.postUserMatch(matchVO);
+    }
+    @Override
+    public int postBoardUpdate(WriteVO writeVO) {
+        return userDAO.postBoardUpdate(writeVO);
+    }
+
+    @Override
+    public int delMyBoard(int id) {
+        return boardDAO.delMyBoard(id);
     }
 }
