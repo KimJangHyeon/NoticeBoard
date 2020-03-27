@@ -8,6 +8,6 @@
         SELECT COUNT(name) FROM test_users WHERE name=#{name} AND password=#{password}
     </select>
     <select id="postUserMatch" parameterType="matchVO" resultType="int">
-        SELECT COUNT(id) FROM test_users user, test_board board  WHERE user.name=board.name AND id=#{id} AND user.name=#{user}
+        SELECT COUNT(id) FROM test_board board  WHERE id=#{id} AND name=#{user}
     </select>
 </mapper>
