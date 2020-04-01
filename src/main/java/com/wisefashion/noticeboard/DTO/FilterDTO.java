@@ -1,18 +1,10 @@
-package com.wisefashion.noticeboard.VO;
+package com.wisefashion.noticeboard.DTO;
 
-import com.wisefashion.noticeboard.Constant.PageConfig;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.annotation.Resource;
-
-public class FilterVO {
+public class FilterDTO {
     String filter;
     int page;
 
-    @Resource(name="entityPerPage")
-    private int entityPerPage;
-
-    public FilterVO(int page, String filter) {
+    public FilterDTO(int page, String filter) {
         this.filter = filter;
         this.page = page * 10;
     }

@@ -1,4 +1,4 @@
-package com.wisefashion.noticeboard.Constant;
+package com.wisefashion.noticeboard.Constants;
 
 public class EntityMessage {
     public static final int DID_NOT_LOGIN = 0;

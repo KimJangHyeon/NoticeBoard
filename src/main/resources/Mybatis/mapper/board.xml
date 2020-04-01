@@ -12,29 +12,28 @@
 
     <resultMap id="readResult" type="board">
         <result column="text" property="text"/>
+        <result column="id" property="id"/>
     </resultMap>
 
-
-
-    <insert id="postUserText" parameterType="writeVO">
+    <insert id="postUserText" parameterType="board">
         INSERT INTO test_board(name, title, text) VALUES (#{name}, #{title}, #{text})
     </insert>
 
-    <select id="getRead" parameterType="int" resultMap="readResult">
-        SELECT text FROM test_board WHERE id = #{id}
+    <select id="getRead" parameterType="board" resultMap="readResult">
+        SELECT id, text FROM test_board WHERE id = #{id}
     </select>
 
-    <select id="getAllList" parameterType="int" resultMap="listResult">
+    <select id="getAllList" parameterType="board" resultMap="listResult">
         SELECT id, name, title FROM test_board LIMIT #{page}, 10
     </select>
 
-    <select id="getFilteredList" parameterType="filterVO" resultType="board">
+    <select id="getFilteredList" parameterType="filterDTO" resultType="board">
        SELECT id, name, title FROM test_board WHERE title LIKE  CONCAT('%',#{filter},'%') OR text LIKE  CONCAT('%',#{filter},'%') LIMIT #{page}, 10
     </select>
-    <update id="postBoardUpdate" parameterType="writeVO">
+    <update id="postBoardUpdate" parameterType="board">
         UPDATE test_board SET title=#{title}, text=#{text} WHERE id=#{id}
     </update>
-    <delete id="delMyBoard" parameterType="int">
+    <delete id="delMyBoard" parameterType="board">
         DELETE FROM test_board WHERE id=#{id}
     </delete>
 </mapper>

@@ -1,6 +1,4 @@
-package com.wisefashion.noticeboard.Constant;
-
-import org.springframework.context.annotation.Configuration;
+package com.wisefashion.noticeboard.Constants;
 
 public class LogInMessage {
     public static final int ALREADY_LOG_IN = -2;

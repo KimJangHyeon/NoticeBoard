@@ -1,18 +1,9 @@
-package com.wisefashion.noticeboard.Entity;
+package com.wisefashion.noticeboard.DTO;
 
-public class BoardEntity {
-
+public class UpdateDTO {
     int id;
-    String name;
     String title;
     String text;
-
-    public void setVariable(int id, String name, String title, String text) {
-        this.id = id;
-        this.name = name;
-        this.title = title;
-        this.text = text;
-    }
 
     public int getId() {
         return id;
@@ -20,14 +11,6 @@ public class BoardEntity {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getTitle() {

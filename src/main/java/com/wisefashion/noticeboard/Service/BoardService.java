@@ -3,16 +3,9 @@ package com.wisefashion.noticeboard.Service;
 import com.wisefashion.noticeboard.DAO.UserDAO;
 import com.wisefashion.noticeboard.DAO.BoardDAO;
 import com.wisefashion.noticeboard.Entity.BoardEntity;
-import com.wisefashion.noticeboard.VO.FilterVO;
-import com.wisefashion.noticeboard.VO.MatchVO;
-import com.wisefashion.noticeboard.VO.SignInVO;
-import com.wisefashion.noticeboard.VO.WriteVO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.wisefashion.noticeboard.DTO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import sun.rmi.runtime.Log;
 
 import java.util.List;
 
@@ -31,32 +24,31 @@ public class BoardService implements InferBoardService {
     }
 
     @Override
-    public int postBoardWrite(WriteVO writeVO) {
-        return boardDAO.postWriteBoard(writeVO);
+    public int postBoardWrite(WriteDTO writeDTO) {
+        return boardDAO.postWriteBoard(writeDTO);
     }
 
     @Override
-    public List<BoardEntity> getListRead(FilterVO filterVO) {
-        if(filterVO.getFilter().equals("")) {
-            return boardDAO.getAllList(filterVO.getPage());
+    public List<BoardEntity> getListRead(FilterDTO filterDTO) {
+        if(filterDTO.getFilter().equals("")) {
+            return boardDAO.getAllList(filterDTO.getPage());
         } else {
-//            return boardDAO.getAllList(filterVO.getPage());
-            return boardDAO.getFilterList(filterVO);
+            return boardDAO.getFilterList(filterDTO);
         }
     }
 
     @Override
-    public boolean postLogIn(SignInVO signInVO) {
-        return userDAO.postLogIn(signInVO);
+    public boolean postLogIn(SignInDTO signInDTO) {
+        return userDAO.postLogIn(signInDTO);
     }
 
     @Override
-    public boolean postUserMatch(MatchVO matchVO) {
-        return userDAO.postUserMatch(matchVO);
+    public boolean postUserMatch(MatchDTO matchDTO) {
+        return boardDAO.postUserMatch(matchDTO);
     }
     @Override
-    public int postBoardUpdate(WriteVO writeVO) {
-        return userDAO.postBoardUpdate(writeVO);
+    public int postBoardUpdate(UpdateDTO updateDTO) {
+        return boardDAO.postBoardUpdate(updateDTO);
     }
 
     @Override

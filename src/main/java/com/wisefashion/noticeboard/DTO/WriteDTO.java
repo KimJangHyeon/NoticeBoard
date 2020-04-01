@@ -1,18 +1,9 @@
-package com.wisefashion.noticeboard.VO;
+package com.wisefashion.noticeboard.DTO;
 
-public class WriteVO {
-    int id;
+public class WriteDTO {
     String name;
     String title;
     String text;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -37,4 +28,5 @@ public class WriteVO {
     public void setText(String text) {
         this.text = text;
     }
+
 }

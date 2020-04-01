@@ -10,11 +10,8 @@
     <typeAliases>
         <typeAlias alias="board" type="com.wisefashion.noticeboard.Entity.BoardEntity" />
         <typeAlias alias="user" type="com.wisefashion.noticeboard.Entity.UserEntity" />
-        <typeAlias alias="writeVO" type="com.wisefashion.noticeboard.VO.WriteVO" />
-        <typeAlias alias="filterVO" type="com.wisefashion.noticeboard.VO.FilterVO" />
-        <typeAlias alias="signInVO" type="com.wisefashion.noticeboard.VO.SignInVO" />
-        <typeAlias alias="matchVO" type="com.wisefashion.noticeboard.VO.MatchVO" />
-
+        <typeAlias alias="join" type="com.wisefashion.noticeboard.Entity.JoinEntity" />
+        <typeAlias alias="filterDTO" type="com.wisefashion.noticeboard.DTO.FilterDTO" />
     </typeAliases>
 
 </configuration>

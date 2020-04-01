@@ -1,6 +1,6 @@
-package com.wisefashion.noticeboard.VO;
+package com.wisefashion.noticeboard.DTO;
 
-public class SignInVO {
+public class SignInDTO {
     String name;
     String password;
 
